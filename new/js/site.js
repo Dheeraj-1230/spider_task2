@@ -125,7 +125,7 @@ let questions = [
   let points = 0;
   let cquestion=0;
   let wquestion=0;
-  // questions=questions.sort(() => Math.random()-0.5);
+  questions=questions.sort(() => Math.random()-0.5);
   window.onload = function() {
     show(question_count);
     document.getElementById("namep").innerHTML=sessionStorage.getItem("name");
@@ -133,8 +133,8 @@ let questions = [
   
   function next() {
     if (question_count == questions.length - 1) {
-      // sessionStorage.setItem("time", time);
-      // clearInterval(mytime);
+      sessionStorage.setItem("time", time);
+      clearInterval(mytime);
       location.href = "end.html";
     }
     question_count++;
@@ -213,6 +213,7 @@ let cnt=0;
   }
   function bclk(numberq)
   {
+    // alert(numberq);
     if(numberq=='one'){
     question_count=0;
     cnt=0;
